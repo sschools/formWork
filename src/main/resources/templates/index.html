@@ -6,19 +6,21 @@
 </head>
 <body>
     <h3>Form test page:</h3>
-    <form action="/index" method="post">
-        <input name="first" type="text" placeholder="Enter first name"/>
-        <input name="last" type="text" placeholder="Enter last name"/>
-        <select name="kids">
-            <option value="0">0</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-        </select>
-        <select name="title">
-            <option th:each="t : ${person.titleList}" th:text="${t}" th:value="${t}"></option>
-        </select>
+    <form action="/index" method="post" th:object="${person}">
+
+            <input th:field="*{firstName}" type="text" placeholder="Enter first name"/>
+            <input th:field="*{lastName}" type="text" placeholder="Enter last name"/>
+            <select th:field="*{numKids}">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>
+            <select th:field="*{title}">
+                <option th:each="t : ${person.titleList}" th:text="${t}" th:value="${t}"></option>
+            </select>
+
         <button type="submit">Submit</button>
     </form>
 </body>
