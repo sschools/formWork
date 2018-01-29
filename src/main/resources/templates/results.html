@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Results from Form</title>
+</head>
+<body>
+    <h3>You entered:</h3>
+    <p><span th:text="${person.getTitle()}"></span> <span th:text="${person.getFirstName()}"></span>
+    <span th:text="${person.getLastName()}"></span> who has <span th:text="${person.getNumKids()}">
+        </span> kid<span th:if="${person.getNumKids() != 1}">s</span>.
+    </p>
+</body>
+</html>

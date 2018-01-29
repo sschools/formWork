@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Form Test</title>
+</head>
+<body>
+    <h3>Form test page:</h3>
+    <form action="/index" method="post">
+        <input name="first" type="text" placeholder="Enter first name"/>
+        <input name="last" type="text" placeholder="Enter last name"/>
+        <select name="kids">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select>
+        <select name="title">
+            <option th:each="t : ${person.titleList}" th:text="${t}" th:value="${t}"></option>
+        </select>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
