@@ -7,6 +7,7 @@
 <body>
     <h3>Form test page:</h3>
     <form action="/index" method="post" th:object="${person}">
+        <!-- <div th:each="person, rowStat : ${people}"> -->
 
             <input th:field="*{firstName}" type="text" placeholder="Enter first name"/>
             <input th:field="*{lastName}" type="text" placeholder="Enter last name"/>
@@ -21,6 +22,7 @@
                 <option th:each="t : ${person.titleList}" th:text="${t}" th:value="${t}"></option>
             </select>
 
+        <!-- </div> -->
         <button type="submit">Submit</button>
     </form>
 </body>

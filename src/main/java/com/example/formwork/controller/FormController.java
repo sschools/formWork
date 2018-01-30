@@ -19,19 +19,18 @@ public class FormController {
 
         /*
         Person[] people = new Person[3];
-        for (Person person : people) {
-            person = new Person();
-            person.setTitleList();
+        for (int i = 0; i < 3; i++) {
+            people[i] = new Person();
+            people[i].setFirstName("tim");
+            people[i].setTitleList();
+            model.addAttribute("people", people[i]);
         }
-        model.addAttribute("people", people);
         */
-
         return "index";
     }
 
     @RequestMapping(path = "/index", method = RequestMethod.POST)
-    public String res(@ModelAttribute Person person) {
-        
+    public String res(@ModelAttribute("person") Person person) {
         return "results";
     }
 }
